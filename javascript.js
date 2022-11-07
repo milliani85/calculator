@@ -1,4 +1,5 @@
 const buttons = document.querySelector('.input-buttons-container');
+const clearButton = document.querySelector('.clear-button');
 const displayOne = document.querySelector('.display-one');
 
 
@@ -38,12 +39,19 @@ const operate = function(n1, operator, n2) {
 }
 
 
-// Function to update display.
+// Update display.
 
 const updateDisplay = function(buttonChoice) {
     displayOne.innerText += buttonChoice;
 
 }
+
+
+// Clear display
+
+clearButton.addEventListener('click', (e) => {
+    location.reload();
+})
 
 
 // Select button.
@@ -60,4 +68,6 @@ buttons.addEventListener('click', (e) => {
     
     updateDisplay(buttonChoice);
 })
+
+
 
