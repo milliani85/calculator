@@ -15,12 +15,33 @@ body {
     background-color: #575555;
 }
 
-.display {
-    border: 2px solid black;
-    border-radius: 8px;
+.display-one {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     background-color: #dddddd;
     margin: 20px;
-    height: 100px;
+    margin-bottom: 0px;
+    height: 50px;
+    font-size: 30px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.display-two {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #dddddd;
+    margin: 20px;
+    margin-top: 0px;
+    height: 50px;
     font-size: 30px;
     display:flex;
     justify-content: flex-end;
@@ -42,19 +63,35 @@ button {
     border: 2px solid black;
     border-radius: 8px;
     font-size: 25px;
+    background-color: #dddddd;
+    transition: 0.3s;
+}
+button:hover {
+    background: #c4c2c2;
 }
 
 .clear-button {
     width: 150px;
     margin-left: 20px;
     margin-bottom: -8px;
-    background-color: rgb(228, 224, 166);
+    background-color: #e4e0a6;
+    transition: 0.3s;
 }
+.clear-button:hover {
+    background: #c9c691;
+  }
 
 .operator-button {
-    background-color: bisque;
+    background-color: #ffe4c4;
+    transition: 0.3s;
 }
+.operator-button:hover {
+    background: #d4bea4;
+  }
 
 .equals-button {
-    background-color: rgb(212, 179, 216);
+    background-color: #d4b3d8;
 }
+.equals-button:hover {
+    background: #bfa2c2;
+  }

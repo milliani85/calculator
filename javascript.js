@@ -1,5 +1,5 @@
 const buttons = document.querySelector('.input-buttons-container');
-const display = document.querySelector('.display');
+const displayOne = document.querySelector('.display-one');
 
 
 
@@ -41,7 +41,7 @@ const operate = function(n1, operator, n2) {
 // Function to update display.
 
 const updateDisplay = function(buttonChoice) {
-    display.innerText += buttonChoice;
+    displayOne.innerText += buttonChoice;
 
 }
 
