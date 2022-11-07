@@ -7,8 +7,6 @@ body {
 }
 
 .calculator {
-    /* display: flex;
-    justify-content: center; */
     align-items: center;
     border: 3px solid black;
     border-radius: 20px;
@@ -50,4 +48,13 @@ button {
     width: 150px;
     margin-left: 20px;
     margin-bottom: -8px;
+    background-color: rgb(228, 224, 166);
+}
+
+.operator-button {
+    background-color: bisque;
+}
+
+.equals-button {
+    background-color: rgb(212, 179, 216);
 }
