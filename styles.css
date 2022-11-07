@@ -69,6 +69,9 @@ button {
 button:hover {
     background: #c4c2c2;
 }
+button:active {
+    background: #a09f9f;
+}
 
 .clear-button {
     width: 150px;
@@ -79,7 +82,10 @@ button:hover {
 }
 .clear-button:hover {
     background: #c9c691;
-  }
+}
+.clear-button:active {
+    background: #9c9a72;
+}
 
 .operator-button {
     background-color: #ffe4c4;
@@ -87,11 +93,17 @@ button:hover {
 }
 .operator-button:hover {
     background: #d4bea4;
-  }
-
+}
+.operator-button:active {
+    background: #a89783;
+}
+  
 .equals-button {
     background-color: #d4b3d8;
 }
 .equals-button:hover {
     background: #bfa2c2;
-  }
+}
+.equals-button:active {
+    background: #957f97;
+}  
