@@ -17,15 +17,18 @@ const add = function(n1, n2) {
 }
 
 const subtract = function(n1, n2) {
-    return n1 - n2;
+    result = n1 - n2;
+    return result;
 }
 
 const multiply = function(n1, n2) {
-    return n1 * n2;
+    result = n1 * n2;
+    return result;
 }
 
 const divide = function(n1, n2) {
-    return n1 / n2;
+    result = n1 / n2;
+    return result;
 }
 
 
@@ -39,7 +42,7 @@ const operate = function(n1, operator, n2) {
         subtract(n1,n2);
     } else if(operator === 'x') {
         multiply(n1,n2);
-    } else if(operator === '/') {
+    } else if(operator === '÷') {
         divide(n1,n2);
     }
 }
