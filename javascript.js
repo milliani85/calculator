@@ -64,8 +64,12 @@ const operateTwo = function(n1, previousOperator, n2) {
 }
 
 
+
+    displayTwo.innerText = 0;
+
+
 // Update display one and store display in variables.
-    const updateDisplayOne = function(buttonChoice) {
+    const updateDisplay = function(buttonChoice) {
         displayOne.innerText += buttonChoice;
  
         
@@ -124,12 +128,14 @@ const operateTwo = function(n1, previousOperator, n2) {
             displayTwo.innerText = '';
     }
 
-
-
-// If button choice is a number then add it to display 2.
-    if(!isNaN(buttonChoice)) {
+// If button choice is a number then add it to display 2. Clears 0 from display 2.
+    if(displayTwo.innerText === '0' && (!isNaN(buttonChoice) || buttonChoice === '.')) {
+        displayTwo.innerText = '';
         displayTwo.innerText += buttonChoice;
-        }
+    }  else if(!isNaN(buttonChoice) || buttonChoice === '.') {
+        displayTwo.innerText += buttonChoice;
+    }
+
 
 
 
@@ -174,8 +180,8 @@ buttons.addEventListener('click', (e) => {
         buttonChoice = '';    
     }
     
-    updateDisplayOne(buttonChoice);
-    //updateDisplayTwo(buttonChoice);
+    updateDisplay(buttonChoice);
+    
 })
 
 
