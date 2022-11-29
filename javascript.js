@@ -10,6 +10,9 @@ let previousOperator;
 let result;
 let buttonChoice;
 
+displayTwo.innerText = 0;
+
+
 
 // Four maths functions.
 
@@ -50,7 +53,6 @@ const operate = function(n1, operator, n2) {
     }
 }
 
-
 //Operator function for operator button choice.
 
 const operateTwo = function(n1, previousOperator, n2) {
@@ -65,20 +67,14 @@ const operateTwo = function(n1, previousOperator, n2) {
         divide(n1,n2);
     }
 }
-
-
-    displayTwo.innerText = 0;
     
 
 
 // Update display one and store display in variables.
 
     const updateDisplay = function(buttonChoice) {
-        //buttonChoice = +buttonChoice;
         displayOne.innerText += buttonChoice;
  
-        
-
 // Updates operator variable and previous operator variable.  
 
     if(buttonChoice === '+' || buttonChoice === '-'
@@ -87,8 +83,6 @@ const operateTwo = function(n1, previousOperator, n2) {
             operator = buttonChoice;
      }
     
-
-
 // Updates n1 and n2 variables.
 
     if(operator === undefined) {
@@ -100,8 +94,6 @@ const operateTwo = function(n1, previousOperator, n2) {
         n2 = +n2;
     }
    
-
-
 // If equals has been pressed to run operator function, then move result to n1 and upper display when an operator is pressed.
 
     if(displayOne.innerText.includes('=') && (buttonChoice === '+' ||
@@ -111,13 +103,11 @@ const operateTwo = function(n1, previousOperator, n2) {
             displayOne.innerText = `${n1}${buttonChoice}`;
     }
     
-
 // If n2 is empty and operator is pressed clear display 2. 
 
     if(n2 === '' && (buttonChoice === '+' || buttonChoice === '-'
     || buttonChoice === 'x' || buttonChoice === '÷')){
         displayTwo.innerText = ''; 
-
 
  // If display one shows an operator and n2 has a value, run operate function when second operator is pressed.
 
@@ -129,10 +119,8 @@ const operateTwo = function(n1, previousOperator, n2) {
             displayOne.innerText = `${n1}${buttonChoice}`;
             n2 = '';
             displayTwo.innerText = result;
-}
+    }
  
-
-
 //Clears diplay two when a second operator is pressed.
 
     const operatorCheck = displayOne.innerText[displayOne.innerText.length -2];
@@ -140,8 +128,6 @@ const operateTwo = function(n1, previousOperator, n2) {
         operatorCheck === 'x' || operatorCheck === '÷' )) {
             displayTwo.innerText = '';
     }
-
-
 
 // If button choice is a number then add it to display 2. Clears 0 from display 2.
 
@@ -151,9 +137,6 @@ const operateTwo = function(n1, previousOperator, n2) {
     }  else if(!isNaN(buttonChoice) || buttonChoice === '.') {
         displayTwo.innerText += buttonChoice;
     }
-
-
-
 
 // If equals is pressed run operate function.  
 
@@ -188,19 +171,9 @@ clearButton.addEventListener('click', (e) => {
 // Select button.
 
 buttons.forEach(button => { 
-
-button.addEventListener('click', (e) => {
-   
-    if(e.target.classList.contains('input')) {
-        buttonChoice = e.target.innerText;
- }
-    
-    updateDisplay(buttonChoice);
+    button.addEventListener('click', (e) => {
+        if(e.target.classList.contains('input')) {
+            buttonChoice = e.target.innerText;
+ }  updateDisplay(buttonChoice);
     })
 })
-
-
-
-
-
-
