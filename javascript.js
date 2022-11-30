@@ -19,12 +19,14 @@ numberButtons.forEach(number => {
 
 function inputNumber(num) {
     n2 += num;
+    n2 = +n2;
     displayTwo.innerText = n2;
 
     console.log(n1);
     console.log(n2);
     console.log(operator);
 }
+
 
 
 //Add operator choice and n2 to top display.
@@ -40,51 +42,34 @@ function inputOperator(op) {
     displayTwo.innerText = '';
     n1 = n2;
     n2 = '';
+
+    console.log(n1);
+    console.log(n2);
+    console.log(operator);
 }
 
 
 
+equalsButton.addEventListener('click', (e)=> {
+    if(n1 !== '' && n2 !== '') {
+        calculate();
+    }
+})
 
+function calculate() {
+    if(operator === ('+')) {
+        n1 += n2;
+    } else if(operator === ('-')) {
+        n1 -= n2;
+    } else if(operator === ('x')) {
+        n1 *= n2;
+    } else if(operator === ('÷')) {
+        n1 /= n2;
+    }
+    displayTwo.innerText = n1;
+    displayOne.innerText = '';
+}
 
-
-
-// // Four basic math functions.
-
-// const add = function(n1, n2) {
-//     result =  n1 + n2;
-//     return result;
-// }
-
-// const subtract = function(n1, n2) {
-//     result = n1 - n2;
-//     return result;
-// }
-
-// const multiply = function(n1, n2) {
-//     result = n1 * n2;
-//     return result;
-// }
-
-// const divide = function(n1, n2) {
-//     result = n1 / n2;
-//     return result;
-// }
-
-
-// // Operator function for = button choice.
-
-// const operate = function(n1, operator, n2) {
-
-//     if(operator === '+') {
-//         add(n1,n2);
-//     } else if(operator === '-') {
-//         subtract(n1,n2);
-//     } else if(operator === 'x') {
-//         multiply(n1,n2);
-//     } else if(operator === '÷') {
-//         divide(n1,n2);
-//     }
-// }
 
 
 // //Operator function for operator button choice.
@@ -100,16 +85,6 @@ function inputOperator(op) {
 //         divide(n1,n2);
 //     }
 // }
-
-
- 
-        
-// // Updates operator variable and previous operator variable.      
-//     if(buttonChoice === '+' || buttonChoice === '-'
-//         || buttonChoice === 'x' || buttonChoice === '÷'){
-//             previousOperator = operator;
-//             operator = buttonChoice;
-//      }
     
 
 
