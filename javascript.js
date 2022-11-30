@@ -49,7 +49,7 @@ function inputOperator(op) {
 }
 
 
-
+//Runs calculate function when equals is pressed.
 equalsButton.addEventListener('click', (e)=> {
     if(n1 !== '' && n2 !== '') {
         calculate();
@@ -68,7 +68,20 @@ function calculate() {
     }
     displayTwo.innerText = n1;
     displayOne.innerText = '';
+    n2 = n1;
+    n1 = '';
+
+    console.log(n1);
+    console.log(n2);
+    console.log(operator);
 }
+
+
+
+// Clear display.
+clearButton.addEventListener('click', (e) => {
+    location.reload();
+})
 
 
 
@@ -165,11 +178,7 @@ function calculate() {
 
 
 
-// // Clear display.
 
-// clearButton.addEventListener('click', (e) => {
-//     location.reload();
-// })
 
 
 // // Select button.
