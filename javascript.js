@@ -4,6 +4,7 @@ const equalsButton = document.querySelector('.equals-button');
 const operatorButtons = document.querySelectorAll('.operator-button');
 const displayOne = document.querySelector('.display-one');
 const displayTwo = document.querySelector('.display-two');
+const decimalButton = document.querySelector('.decimal-button')
 
 let n1 = '';
 let n2 = '';
@@ -18,13 +19,11 @@ numberButtons.forEach(number => {
 })
 
 function inputNumber(num) {
-    n2 += num;
-    n2 = +n2;
-    displayTwo.innerText = n2;
-
-    console.log(n1);
-    console.log(n2);
-    console.log(operator);
+    if(n2.toString().length < 12) {
+        n2 += num;
+        n2 = +n2;
+        displayTwo.innerText = n2;
+    }
 }
 
 
@@ -47,10 +46,6 @@ function inputOperator(op) {
     displayTwo.innerText = '';
     n1 = n2;
     n2 = '';
-
-    console.log(n1);
-    console.log(n2);
-    console.log(operator);
 }
 
 function secondOperator(op) {
@@ -80,14 +75,11 @@ function calculate() {
     } else if(operator === ('÷')) {
         n1 /= n2;
     }
+    n1 = roundNumber();
     displayTwo.innerText = n1;
     displayOne.innerText = '';
     n2 = n1;
     n1 = '';
-
-    console.log(n1);
-    console.log(n2);
-    console.log(operator);
 }
 
 
@@ -99,8 +91,19 @@ clearButton.addEventListener('click', (e) => {
 
 
 
+decimalButton.addEventListener('click', (e) => {
+    addDecimal();
+})
 
 
+function addDecimal() {
+    if(!n2.toString().includes('.')) {
+    n2 += '.';
+    displayTwo.innerText = n2;
+    } 
+}
 
 
-
+function roundNumber() {
+    return Math.round(n1 * 10000000) / 10000000;
+}
