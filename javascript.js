@@ -1,7 +1,7 @@
 const numberButtons = document.querySelectorAll('.number-button');
 const clearButton = document.querySelector('.clear-button');
 const equalsButton = document.querySelector('.equals-button');
-const operatorButton = document.querySelector('.operator-button');
+const operatorButtons = document.querySelectorAll('.operator-button');
 const displayOne = document.querySelector('.display-one');
 const displayTwo = document.querySelector('.display-two');
 
@@ -13,14 +13,39 @@ let operator = ''
 //Add number choice to bottom display.
 numberButtons.forEach(number => {
     number.addEventListener('click', (e) => {
-    selectNumber(e.target.innerText);
+    inputNumber(e.target.innerText);
     })
 })
 
-function selectNumber(num) {
+function inputNumber(num) {
     n2 += num;
     displayTwo.innerText = n2;
+
+    console.log(n1);
+    console.log(n2);
+    console.log(operator);
 }
+
+
+//Add operator choice and n2 to top display.
+operatorButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        inputOperator(e.target.innerText)
+    })
+})
+
+function inputOperator(op) {
+    operator = op;
+    displayOne.innerText = `${n2} ${operator}`;
+    displayTwo.innerText = '';
+    n1 = n2;
+    n2 = '';
+}
+
+
+
+
+
 
 
 // // Four basic math functions.
