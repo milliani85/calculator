@@ -1,4 +1,4 @@
-const numberButtons = document.querySelectorAll('.input-buttons-container');
+const numberButtons = document.querySelectorAll('.number-button');
 const clearButton = document.querySelector('.clear-button');
 const equalsButton = document.querySelector('.equals-button');
 const operatorButton = document.querySelector('.operator-button');
@@ -9,6 +9,18 @@ let n1 = '';
 let n2 = '';
 let operator = ''
 
+
+//Add number choice to bottom display.
+numberButtons.forEach(number => {
+    number.addEventListener('click', (e) => {
+    selectNumber(e.target.innerText);
+    })
+})
+
+function selectNumber(num) {
+    n2 += num;
+    displayTwo.innerText = n2;
+}
 
 
 // // Four basic math functions.
@@ -65,9 +77,6 @@ let operator = ''
 // }
 
 
-// // Update display one and store display in variables.
-//     const updateDisplayOne = function(buttonChoice) {
-//         displayOne.innerText += buttonChoice;
  
         
 // // Updates operator variable and previous operator variable.      
